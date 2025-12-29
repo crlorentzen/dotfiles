@@ -4,6 +4,8 @@ case $- in
       *) return;;
 esac
 
+OS_TYPE=$(uname -s)
+
 # Reloads the history whenever you use it
 #setopt share_history
 
@@ -33,8 +35,18 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # update the values of LINES and COLUMNS.
 #shopt -s checkwinsize
 
-[ -z "$PS1" ] && return
-PS1="%n@$(scutil --get ComputerName) %1~ %# "
+case ${OS_TYPE} in
+  Linux)
+    echo "Linux"
+    ssh-add -A
+    ;;
+  Darwin)
+    ssh-add --apple-load-keychain
+    ;;
+esac
+
+#[ -z "$PS1" ] && return
+#PS1="%n@$(scutil --get ComputerName) %1~ %# "
 
 PATH="/usr/local/sbin:$PATH"
 
@@ -48,4 +60,4 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-ssh-add -A
+
