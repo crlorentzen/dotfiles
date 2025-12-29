@@ -1,3 +1,7 @@
+-- Lock Screen
+hs.hotkey.bind({"ctrl", "cmd"}, "L", function()
+	hs.caffeinate.lockScreen()
+end)
 
 -- BEGIN caffeine replacement -----
 ampOnIcon = [[ASCII:
