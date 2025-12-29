@@ -11,7 +11,6 @@ hs.alert.show("Config loaded")
 
 require('caffeine')
 
--- BEGIN Move window between displays -----
 -- Move to next screen
 hs.hotkey.bind(cmd_ctrl_alt, "N", function()
 	local win = hs.window.focusedWindow()
@@ -29,8 +28,8 @@ hs.hotkey.bind(cmd_ctrl_alt, "P", function()
 	win:moveToScreen(prevScreen)
 
 end)
--- END Move window between displays -----
 
+-- Maximize Window
 hs.hotkey.bind(cmd_ctrl_alt, 'M', function()
 	local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -44,6 +43,7 @@ hs.hotkey.bind(cmd_ctrl_alt, 'M', function()
     win:setFrame(f)
 
 end)
+-- Center Window (1/4)
 hs.hotkey.bind(cmd_ctrl_alt, 'C', function()
 	local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -57,6 +57,7 @@ hs.hotkey.bind(cmd_ctrl_alt, 'C', function()
     win:setFrame(f)
 
 end)
+-- Upper Half Window
 hs.hotkey.bind(cmd_ctrl_alt, "Up", function()
 	local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -69,6 +70,7 @@ hs.hotkey.bind(cmd_ctrl_alt, "Up", function()
     f.h = max.h / 2
     win:setFrame(f)
 end)
+-- Lower Half Window
 hs.hotkey.bind(cmd_ctrl_alt, "Down", function()
 	local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -81,7 +83,7 @@ hs.hotkey.bind(cmd_ctrl_alt, "Down", function()
     f.h = max.h / 2
     win:setFrame(f)
 end)
-
+-- Left Half Window
 hs.hotkey.bind(cmd_ctrl_alt, "Left", function()
 	local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -94,6 +96,7 @@ hs.hotkey.bind(cmd_ctrl_alt, "Left", function()
     f.h = max.h
     win:setFrame(f)
 end)
+-- Right Half Window
 hs.hotkey.bind(cmd_ctrl_alt, "Right", function()
 	local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -107,7 +110,7 @@ hs.hotkey.bind(cmd_ctrl_alt, "Right", function()
     win:setFrame(f)
 end)
 
--- Move
+-- Move Window Upper Half
 hs.hotkey.bind(ctrl_alt, "Up", function()
 	-- Half Size Up
 	local win = hs.window.focusedWindow()
@@ -122,6 +125,7 @@ hs.hotkey.bind(ctrl_alt, "Up", function()
     win:setFrame(f)
 
 end)
+-- Move Window Lower Half
 hs.hotkey.bind(ctrl_alt, "Down", function()
 	-- Half size Down
 	local win = hs.window.focusedWindow()
@@ -137,6 +141,7 @@ hs.hotkey.bind(ctrl_alt, "Down", function()
     win:setFrame(f)
 
 end)
+-- Move Window Left Half
 hs.hotkey.bind(ctrl_alt, "Left", function()
 	-- Half size Left
 	local win = hs.window.focusedWindow()
@@ -151,6 +156,7 @@ hs.hotkey.bind(ctrl_alt, "Left", function()
     win:setFrame(f)
 
 end)
+-- Move Window Right Half
 hs.hotkey.bind(ctrl_alt, "Right", function()
 	-- Half size Right
 	local win = hs.window.focusedWindow()
