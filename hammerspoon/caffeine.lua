@@ -1,5 +1,11 @@
+-- hotkey mash
+local ctrl_alt       = {"ctrl", "alt"}
+local cmd_ctrl_alt 	 = {"cmd", "ctrl", "alt"}
+local ctrl_alt_shift = {"ctrl", "alt", "shift"}
+local ctrl_shift	 = {"ctrl", "shift"}
+
 -- Lock Screen
-hs.hotkey.bind({"ctrl", "cmd"}, "L", function()
+hs.hotkey.bind(cmd_ctrl_alt, "L", function()
 	hs.caffeinate.lockScreen()
 end)
 
