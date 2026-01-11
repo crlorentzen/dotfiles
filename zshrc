@@ -49,6 +49,9 @@ esac
 #PS1="%n@$(scutil --get ComputerName) %1~ %# "
 
 PATH="/usr/local/sbin:$PATH"
+if [ -d ${HOME}/scripts ]; then
+  PATH="${HOME}/scripts:$PATH"
+fi
 
 if [ -f ${HOME}/.aliases ]; then
   source ${HOME}/.aliases
@@ -60,4 +63,8 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
   source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+export PATH
 
+if [ -f ${HOME}/.workrc ]; then
+  source ${HOME}/.workrc
+fi
