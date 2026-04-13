@@ -23,6 +23,11 @@ hs.hotkey.bind(cmd_ctrl_alt, "P", function()
 
 end)
 
+-- Toggle Show Desktop
+hs.hotkey.bind(cmd_ctrl_alt, "D", function()
+        hs.spaces.toggleShowDesktop()
+end)
+
 -- Maximize Window
 hs.hotkey.bind(cmd_ctrl_alt, 'M', function()
 	local win = hs.window.focusedWindow()
